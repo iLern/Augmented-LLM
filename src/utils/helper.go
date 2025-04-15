@@ -4,12 +4,9 @@ import (
 	"crypto/rand"
 	"encoding/hex"
 	"encoding/json"
-	"io"
-	"log"
 	"strings"
 	"time"
 
-	"github.com/cloudwego/eino/schema"
 	"github.com/fatih/color"
 )
 
@@ -71,21 +68,4 @@ func LogTitle(message string) {
 
 	cyanBold := color.New(color.FgCyan, color.Bold).SprintFunc()
 	println(cyanBold(paddedMessage))
-}
-
-func ReportStream(sr *schema.StreamReader[*schema.Message]) {
-	defer sr.Close()
-
-	i := 0
-	for {
-		message, err := sr.Recv()
-		if err == io.EOF { // 流式输出结束
-			return
-		}
-		if err != nil {
-			log.Fatalf("recv failed: %v", err)
-		}
-		log.Printf("%+v", message)
-		i++
-	}
 }
