@@ -1,0 +1,48 @@
+# Go项目相关
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Go工作目录
+/bin/
+/pkg/
+
+# 依赖目录
+/vendor/
+
+# 测试覆盖率文件
+coverage.txt
+coverage.html
+
+# 日志文件
+*.log
+
+# macOS系统文件
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE配置文件
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# 环境变量和配置文件
+.env
+*.env
+config.yaml
+config.yml
+!example.config.yaml
+
+# 临时文件
+tmp/
+temp/
+
+# 编译生成的二进制文件
+/Augmented-LLM
